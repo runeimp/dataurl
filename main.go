@@ -13,7 +13,7 @@ import (
  */
 const (
 	appName    = "dataURL"
-	appVersion = "0.1.0"
+	appVersion = "0.2.0"
 )
 
 /*
@@ -37,7 +37,7 @@ func main() {
 			case "-d", "-debug", "--debug":
 				debug = true
 			case "-h", "-help", "--help":
-				fmt.Println("USAGE: dataurl path/to/file/to/encode")
+				fmt.Println("USAGE: dataurl [-dhv] path/to/file/to/encode [additional/files/to/encode]")
 				os.Exit(0)
 			case "-v", "-ver", "-version", "--version":
 				fmt.Println(appLabel)
@@ -60,6 +60,6 @@ func main() {
 
 		output = string(fileData)
 		output = "data:text/html," + url.QueryEscape(output)
-		fmt.Println(output)
+		fmt.Print(output)
 	}
 }
